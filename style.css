@@ -3,7 +3,13 @@
   box-sizing: border-box;
 }
 
-/*layout for the home and video pages*/
+body {
+  margin: 0;
+  background: #0a0a12;
+  color: #f5eee6;
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
 .home-page, .video-page {
   min-height: 100vh;
   padding: 30px 20px;
@@ -18,3 +24,7 @@
   background: radial-gradient(circle at center, #736df2, #0a0a12 75%);
 }
 
+h1, h2, button {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  letter-spacing: 2px;
+}
