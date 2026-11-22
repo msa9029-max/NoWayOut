@@ -23,3 +23,9 @@ function playScene(pageId, videoId) {
     document.getElementById('video-error').style.display = 'block';
   });
 });
+
+//start film
+ document.getElementById('start-btn').addEventListener('click', function() {
+  document.getElementById('choice1').style.display = 'none';
+  playScene('scene1', 'scene1-video');
+});
