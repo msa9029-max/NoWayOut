@@ -28,3 +28,11 @@ h1, h2, button {
   font-family: 'Bebas Neue', Impact, sans-serif;
   letter-spacing: 2px;
 }
+
+h1 {
+  font-size: clamp(70px, 13vw, 160px);
+  line-height: 1;
+  margin: 10px 0;
+  text-shadow: 5px 5px #7a2ba5;
+}
+
