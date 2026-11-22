@@ -59,3 +59,8 @@ document.getElementById('hospital-video').addEventListener('ended', function() {
   document.getElementById('hospital-ending').style.display = 'flex';
 });
 
+//back to the first decision
+ document.getElementById('try-again-btn').addEventListener('click', function() {
+  showPage('scene1');
+  document.getElementById('choice1').style.display = 'flex';
+});
