@@ -110,3 +110,22 @@ button:hover {
   font-size: 20px;
 }
 
+.error-message {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  padding: 12px;
+  background: #722536;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+@media (max-width: 600px) {
+  h2 { font-size: 30px; }
+  .video-choices button { padding: 7px 14px; font-size: 19px; }
+  .home-page, .video-page { padding: 20px 10px; }
+}
+
