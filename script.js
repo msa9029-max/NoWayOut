@@ -29,3 +29,18 @@ function playScene(pageId, videoId) {
   document.getElementById('choice1').style.display = 'none';
   playScene('scene1', 'scene1-video');
 });
+
+//first decision/option
+ document.getElementById('scene1-video').addEventListener('ended', function() {
+  document.getElementById('choice1').style.display = 'flex';
+});
+
+document.getElementById('answer-btn').addEventListener('click', function() {
+  document.getElementById('answer-next').style.display = 'none';
+  playScene('answer-scene', 'answer-video');
+});
+
+document.getElementById('decline-btn').addEventListener('click', function() {
+  document.getElementById('choice2').style.display = 'none';
+  playScene('decline-scene', 'decline-video');
+});
