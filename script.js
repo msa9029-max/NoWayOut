@@ -44,3 +44,18 @@ document.getElementById('decline-btn').addEventListener('click', function() {
   document.getElementById('choice2').style.display = 'none';
   playScene('decline-scene', 'decline-video');
 });
+
+//Answer: car accident then hospital
+ document.getElementById('answer-video').addEventListener('ended', function() {
+  document.getElementById('answer-next').style.display = 'block';
+});
+
+document.getElementById('answer-next').addEventListener('click', function() {
+  document.getElementById('hospital-ending').style.display = 'none';
+  playScene('hospital-scene', 'hospital-video');
+});
+
+document.getElementById('hospital-video').addEventListener('ended', function() {
+  document.getElementById('hospital-ending').style.display = 'flex';
+});
+
