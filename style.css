@@ -10,7 +10,6 @@ body {
   font-family: 'DM Sans', Arial, sans-serif;
 }
 
-/*layout for the home and video pages*/
 .home-page, .video-page {
   min-height: 100vh;
   padding: 30px 20px;
