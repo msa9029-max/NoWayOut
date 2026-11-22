@@ -64,3 +64,19 @@ document.getElementById('hospital-video').addEventListener('ended', function() {
   showPage('scene1');
   document.getElementById('choice1').style.display = 'flex';
 });
+
+//Decline: choose gym or walk
+ document.getElementById('decline-video').addEventListener('ended', function() {
+  document.getElementById('choice2').style.display = 'flex';
+});
+
+document.getElementById('gym-btn').addEventListener('click', function() {
+  document.getElementById('gym-ending').style.display = 'none';
+  playScene('gym-scene', 'gym-video');
+});
+
+document.getElementById('walk-btn').addEventListener('click', function() {
+  document.getElementById('walk-ending').style.display = 'none';
+  playScene('walk-scene', 'walk-video');
+});
+
