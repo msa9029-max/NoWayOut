@@ -86,4 +86,12 @@ button:hover {
   padding: 15px;
 }
 
+.video-choices p {
+  font-weight: 700;
+  font-size: clamp(17px, 3vw, 26px);
+  margin: 0 0 15px;
+}
 
+.video-choices button {
+  min-width: 190px;
+}
