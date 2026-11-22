@@ -61,5 +61,12 @@ button:hover {
   background: #0a0a12;
 }
 
+.video-box {
+  position: relative;
+  width: min(100%, 1000px);
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 2px solid #333;
+}
 
 
