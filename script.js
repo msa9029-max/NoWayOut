@@ -5,3 +5,14 @@ function showPage(pageId) {
   document.getElementById(pageId).style.display = 'flex';
   document.getElementById('video-error').style.display = 'none';
 }
+
+//video starts from the beginning
+function playScene(pageId, videoId) {
+  document.querySelectorAll('video').forEach(function(video) {
+    video.pause();
+  });
+  showPage(pageId);
+  const video = document.getElementById(videoId);
+  video.currentTime = 0;
+  video.play().catch(function() {});
+}
