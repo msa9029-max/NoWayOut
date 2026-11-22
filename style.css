@@ -95,3 +95,13 @@ button:hover {
 .video-choices button {
   min-width: 190px;
 }
+
+.next-btn {
+  margin-top: 20px;
+}
+
+.ending {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
