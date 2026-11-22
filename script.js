@@ -16,3 +16,10 @@ function playScene(pageId, videoId) {
   video.currentTime = 0;
   video.play().catch(function() {});
 }
+
+//if a video doesn't load
+ document.querySelectorAll('video').forEach(function(video) {
+  video.addEventListener('error', function() {
+    document.getElementById('video-error').style.display = 'block';
+  });
+});
