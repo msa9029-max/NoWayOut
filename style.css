@@ -41,3 +41,9 @@ h2 {
   margin: 0 0 20px;
 }
 
+button {
+  padding: 12px 30px;
+  margin: 8px;
+  border: 2px solid #f5eee6;
+  cursor: pointer;
+}
