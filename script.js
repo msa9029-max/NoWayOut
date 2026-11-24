@@ -39,8 +39,11 @@ function playScene(pageId, videoId) {
   showPage(pageId);
   const video = document.getElementById(videoId);
   video.currentTime = 0;
-  video.play().catch(function() {});
-}
+   video.play().catch(function() {
+  document.getElementById('video-error').textContent =
+    'Could not play: ' + video.getAttribute('src');
+  document.getElementById('video-error').style.display = 'block';
+});
 
 //if a video doesn't load
  document.querySelectorAll('video').forEach(function(video) {
