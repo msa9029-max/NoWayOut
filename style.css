@@ -120,7 +120,7 @@ button:active {
 .video-box {
   position: relative;
   width: min(100%, 1100px);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2 / 1;
   background: #000;
   border: 1px solid #34424e;
   border-radius: 18px;
