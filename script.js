@@ -81,7 +81,7 @@ document.getElementById('decline-btn').addEventListener('click', function() {
  document.getElementById('answer-next').style.display = 'flex';
 });
 
-document.getElementById('answer-next').addEventListener('click', function() {
+document.querySelector('#answer-next button').addEventListener('click', function() {
   document.getElementById('hospital-ending').style.display = 'none';
   playScene('hospital-scene', 'hospital-video');
 });
