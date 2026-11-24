@@ -236,8 +236,8 @@ button:active {
 /* REPLAY BUTTONS */
 
 #try-again-btn,
-#gym-replay,
-#walk-replay {
+#gym-try-again,
+#walk-try-again {
   background: #253744;
   color: #ffffff;
   border: 1px solid #526775;
@@ -245,8 +245,8 @@ button:active {
 }
 
 #try-again-btn:hover,
-#gym-replay:hover,
-#walk-replay:hover {
+#gym-try-again:hover,
+#walk-try-again:hover {
   background: #375263;
 }
 
