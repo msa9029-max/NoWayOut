@@ -23,11 +23,13 @@ function showPage(pageId) {
   document.getElementById(pageId).style.display = 'flex';
   document.getElementById('video-error').style.display = 'none';
 
-  //only show controls button during the film
+  //only show controls and small title during the film
   if (pageId === 'home') {
     document.getElementById('controls-btn').style.display = 'none';
+    document.getElementById('site-title').style.display = 'none';
   } else {
     document.getElementById('controls-btn').style.display = 'block';
+    document.getElementById('site-title').style.display = 'block';
   }
 }
 
