@@ -188,15 +188,15 @@ button:active {
   box-shadow: 0 8px 28px rgba(240, 78, 87, 0.35);
 }
 
-/* GYM BUTTON - GREEN */
+/* GYM BUTTON */
 
 #gym-btn {
-  background: #1cba76;
-  color: #07180f;
+  background: #8265c9;
+  color: white;
 }
 
 #gym-btn:hover {
-  background: #39e49a;
+  background: #a087e3;
 }
 
 /* WALK BUTTON - BLUE */
