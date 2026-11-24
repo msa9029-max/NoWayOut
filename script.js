@@ -1,3 +1,20 @@
+//show or hide video controls
+let showControls = false;
+
+document.getElementById('controls-btn').addEventListener('click', function() {
+  showControls = !showControls;
+
+  document.querySelectorAll('video').forEach(function(video) {
+    video.controls = showControls;
+  });
+
+  if (showControls) {
+    document.getElementById('controls-btn').textContent = 'HIDE CONTROLS';
+  } else {
+    document.getElementById('controls-btn').textContent = 'SHOW CONTROLS';
+  }
+});
+
 function showPage(pageId) {
   document.querySelectorAll('.home-page, .video-page').forEach(function(page) {
     page.style.display = 'none';
