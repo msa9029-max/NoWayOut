@@ -282,6 +282,24 @@ button:active {
   z-index: 10;
 }
 
+/* video controls button */
+
+#controls-btn {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 12px;
+  padding: 10px 15px;
+  background: #253744;
+  color: white;
+  border-radius: 8px;
+  z-index: 20;
+}
+
+#controls-btn:hover {
+  background: #375263;
+}
+
 /* MOBILE DESIGN */
 
 @media (max-width: 600px) {
