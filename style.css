@@ -302,6 +302,19 @@ button:active {
 
 /* MOBILE DESIGN */
 
+/* small website title */
+
+#site-title {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: white;
+  z-index: 20;
+}
+
 @media (max-width: 600px) {
   h1 {
     font-size: 60px;
