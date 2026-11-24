@@ -81,6 +81,23 @@ function showPage(pageId) {
   });
 
   document.getElementById(pageId).style.display = 'flex';
+  currentVideo = document.querySelector('#' + pageId + ' video');
+
+document.getElementById('control-bar').style.display =
+  pageId !== 'home' && showControls ? 'flex' : 'none';
+
+if (currentVideo) {
+  document.getElementById('video-progress').value =
+    currentVideo.duration
+      ? (currentVideo.currentTime / currentVideo.duration) * 100
+      : 0;
+
+  document.getElementById('play-pause-btn').textContent =
+    currentVideo.paused ? 'PLAY' : 'PAUSE';
+
+  document.getElementById('mute-btn').textContent =
+    currentVideo.muted ? 'UNMUTE' : 'MUTE';
+}
   document.getElementById('video-error').style.display = 'none';
 
   //only show controls and small title during the film
