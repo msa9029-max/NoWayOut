@@ -109,24 +109,3 @@ document.getElementById('walk-try-again').addEventListener('click', function() {
   showPage('decline-scene');
   document.getElementById('choice2').style.display = 'flex';
 });
-
-// ~temporary endings until final scene is filmed?
- document.getElementById('gym-video').addEventListener('ended', function() {
-  document.getElementById('gym-ending').style.display = 'flex';
-});
-
-document.getElementById('walk-video').addEventListener('ended', function() {
-  document.getElementById('walk-ending').style.display = 'flex';
-});
-
-document.getElementById('gym-replay').addEventListener('click', function() {
-  showPage('decline-scene');
-  document.getElementById('choice2').style.display = 'flex';
-});
-
-document.getElementById('walk-replay').addEventListener('click', function() {
-  showPage('decline-scene');
-  document.getElementById('choice2').style.display = 'flex';
-});
-
-
