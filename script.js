@@ -44,6 +44,7 @@ function playScene(pageId, videoId) {
     'Could not play: ' + video.getAttribute('src');
   document.getElementById('video-error').style.display = 'block';
 });
+}
 
 //if a video doesn't load
  document.querySelectorAll('video').forEach(function(video) {
