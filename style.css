@@ -159,7 +159,9 @@ button:active {
 }
 
 .video-choices button {
-  min-width: 240px;
+  width: 280px;
+  max-width: 100%;
+  border-radius: 14px;
 }
 
 /* green answer button */
@@ -241,7 +243,7 @@ button:active {
   background: #253744;
   color: #ffffff;
   border: 1px solid #526775;
-  border-radius: 50px;
+  border-radius: 14px;
 }
 
 #try-again-btn:hover,
