@@ -1,5 +1,5 @@
 
-/* NO WAY OUT - NEW MODERN THEME */
+/* NO WAY OUT theme */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
@@ -14,7 +14,7 @@ body {
   font-family: 'Outfit', sans-serif;
 }
 
-/* ALL PAGES */
+/* all pages */
 
 .home-page,
 .video-page {
@@ -26,7 +26,7 @@ body {
   text-align: center;
 }
 
-/* START PAGE BACKGROUND */
+/* Home page background */
 
 .home-page {
   display: flex;
@@ -38,7 +38,7 @@ body {
     );
 }
 
-/* NEW TITLE FONT */
+/* title font */
 
 h1 {
   font-family: 'Outfit', sans-serif;
@@ -67,7 +67,7 @@ h2 {
   margin: 0 0 40px;
 }
 
-/* NEW BUTTON SHAPES */
+/* button shapes */
 
 button {
   font-family: 'Outfit', sans-serif;
@@ -93,7 +93,7 @@ button:active {
   transform: scale(0.96);
 }
 
-/* START FILM BUTTON - LIGHT BLUE/WHITE */
+/* start film button */
 
 #start-btn {
   background: #e4eef7;
@@ -109,13 +109,13 @@ button:active {
   box-shadow: 0 12px 40px rgba(190, 225, 255, 0.25);
 }
 
-/* VIDEO PAGE */
+/* video page */
 
 .video-page {
   background: #10151b;
 }
 
-/* VIDEO PLAYER */
+/* video player */
 
 .video-box {
   position: relative;
@@ -135,7 +135,7 @@ button:active {
   object-fit: contain;
 }
 
-/* CHOICE OVERLAY */
+/* choices */
 
 .video-choices {
   position: absolute;
@@ -162,7 +162,7 @@ button:active {
   min-width: 240px;
 }
 
-/* GREEN ANSWER BUTTON */
+/* green answer button */
 
 #answer-btn {
   background: #1cba76;
@@ -175,7 +175,7 @@ button:active {
   box-shadow: 0 8px 28px rgba(28, 186, 118, 0.35);
 }
 
-/* RED DECLINE BUTTON */
+/* red decline button */
 
 #decline-btn {
   background: #f04e57;
