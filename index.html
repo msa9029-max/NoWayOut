@@ -36,21 +36,27 @@
     </div>
   </div>
 
-  <!-- scene 2A: answer the call -->
-  <div id="answer-scene" class="video-page" style="display: none;">
-    <h2>ANSWER THE CALL</h2>
-    <div class="video-box"><video id="answer-video" playsinline src="assets/scene2a.mp4"></video></div>
-    <button id="answer-next" class="next-btn" style="display: none;">CONTINUE</button>
+<!-- scene 2A: answer the call -->
+<div id="answer-scene" class="video-page" style="display: none;">
+  <h2>ANSWER THE CALL</h2>
+  <div class="video-box">
+    <video id="answer-video" playsinline src="assets/scene2a.mp4"></video>
+    <div id="answer-next" class="video-choices" style="display: none;">
+      <button>CONTINUE</button>
+    </div>
   </div>
-
-  <!-- scene 3A: hospital -->
-  <div id="hospital-scene" class="video-page" style="display: none;">
-    <h2>THE HOSPITAL</h2>
-    <div class="video-box"><video id="hospital-video" playsinline src="assets/DeclinedTheCall.mp4"></video></div>
-    <div id="hospital-ending" class="ending" style="display: none;">
+</div>
+  
+<!-- scene 3A: hospital -->
+<div id="hospital-scene" class="video-page" style="display: none;">
+  <h2>THE HOSPITAL</h2>
+  <div class="video-box">
+    <video id="hospital-video" playsinline src="assets/DeclinedTheCall.mp4"></video>
+    <div id="hospital-ending" class="video-choices" style="display: none;">
       <button id="try-again-btn">TRY A DIFFERENT CHOICE</button>
     </div>
   </div>
+</div>
 
 <!-- scene 2B: decline the call -->
 <div id="decline-scene" class="video-page" style="display: none;">
@@ -70,8 +76,10 @@
   <h2>THE GYM</h2>
   <div class="video-box">
     <video id="gym-video" playsinline src="assets/scene4a.mp4"></video>
+    <div id="gym-next" class="video-choices" style="display: none;">
+      <button>CONTINUE</button>
+    </div>
   </div>
-  <button id="gym-next" class="next-btn" style="display: none;">CONTINUE</button>
 </div>
   
 <!-- hospital after gym -->
@@ -79,12 +87,12 @@
   <h2>THE HOSPITAL</h2>
   <div class="video-box">
     <video id="gym-hospital-video" playsinline src="assets/Didn'tGoToTheGym.mp4"></video>
+    <div id="gym-hospital-ending" class="video-choices" style="display: none;">
+      <p>WHAT SHOULD ABDULLA DO INSTEAD?</p>
+      <button id="gym-to-walk">GO FOR A WALK</button>
+      <button id="gym-to-decline">DECLINE THE CALL</button>
+    </div>
   </div>
-<div id="gym-hospital-ending" class="ending" style="display: none;">
-  <p>WHAT SHOULD ABDULLA DO INSTEAD?</p>
-  <button id="gym-to-walk">GO FOR A WALK</button>
-  <button id="gym-to-decline">DECLINE THE CALL</button>
-</div>
 </div>
   
 <!-- scene 4B: walk -->
@@ -92,21 +100,23 @@
   <h2>THE WALK</h2>
   <div class="video-box">
     <video id="walk-video" playsinline src="assets/scene4b.mp4"></video>
+    <div id="walk-next" class="video-choices" style="display: none;">
+      <button>CONTINUE</button>
+    </div>
   </div>
-  <button id="walk-next" class="next-btn" style="display: none;">CONTINUE</button>
 </div>
   
-  <!-- hospital after walk -->
+<!-- hospital after walk -->
 <div id="walk-hospital" class="video-page" style="display: none;">
   <h2>THE HOSPITAL</h2>
   <div class="video-box">
     <video id="walk-hospital-video" playsinline src="assets/Didn'tGoOnAWalk.mp4"></video>
+    <div id="walk-hospital-ending" class="video-choices" style="display: none;">
+      <p>WHAT SHOULD ABDULLA DO INSTEAD?</p>
+      <button id="walk-to-gym">GO TO THE GYM</button>
+      <button id="walk-to-decline">DECLINE THE CALL</button>
+    </div>
   </div>
-<div id="walk-hospital-ending" class="ending" style="display: none;">
-  <p>WHAT SHOULD ABDULLA DO INSTEAD?</p>
-  <button id="walk-to-gym">GO TO THE GYM</button>
-  <button id="walk-to-decline">DECLINE THE CALL</button>
-</div>
 </div>
   
   <p id="video-error" class="error-message" style="display: none;">Video could not load</p>
