@@ -260,12 +260,12 @@ button:active {
 }
 
 #walk-to-gym {
-  background: #1cba76;
-  color: #07180f;
+  background: #8265c9;
+  color: white;
 }
 
 #walk-to-gym:hover {
-  background: #39e49a;
+  background: #a087e3;
 }
 
 /* ERROR MESSAGE */
