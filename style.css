@@ -236,8 +236,8 @@ button:active {
 /* REPLAY BUTTONS */
 
 #try-again-btn,
-#gym-try-again,
-#walk-try-again {
+#gym-to-decline,
+#walk-to-decline {
   background: #253744;
   color: #ffffff;
   border: 1px solid #526775;
@@ -245,9 +245,27 @@ button:active {
 }
 
 #try-again-btn:hover,
-#gym-try-again:hover,
-#walk-try-again:hover {
+#gym-to-decline:hover,
+#walk-to-decline:hover {
   background: #375263;
+}
+
+#gym-to-walk {
+  background: #4995e9;
+  color: white;
+}
+
+#gym-to-walk:hover {
+  background: #6ab0ff;
+}
+
+#walk-to-gym {
+  background: #1cba76;
+  color: #07180f;
+}
+
+#walk-to-gym:hover {
+  background: #39e49a;
 }
 
 /* ERROR MESSAGE */
