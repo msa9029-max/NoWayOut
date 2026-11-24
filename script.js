@@ -80,6 +80,22 @@ document.getElementById('walk-btn').addEventListener('click', function() {
   playScene('walk-scene', 'walk-video');
 });
 
+//hospital after gym
+document.getElementById('gym-video').addEventListener('ended', function() {
+  document.getElementById('gym-hospital-ending').style.display = 'none';
+  playScene('gym-hospital', 'gym-hospital-video');
+});
+
+document.getElementById('gym-hospital-video').addEventListener('ended', function() {
+  document.getElementById('gym-hospital-ending').style.display = 'flex';
+});
+
+//return to gym or walk decision
+document.getElementById('gym-try-again').addEventListener('click', function() {
+  showPage('decline-scene');
+  document.getElementById('choice2').style.display = 'flex';
+});
+
 // ~temporary endings until final scene is filmed?
  document.getElementById('gym-video').addEventListener('ended', function() {
   document.getElementById('gym-ending').style.display = 'flex';
