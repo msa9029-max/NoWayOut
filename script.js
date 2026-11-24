@@ -78,7 +78,7 @@ document.getElementById('decline-btn').addEventListener('click', function() {
 
 //Answer: car accident then hospital
  document.getElementById('answer-video').addEventListener('ended', function() {
-  document.getElementById('answer-next').style.display = 'block';
+ document.getElementById('answer-next').style.display = 'flex';
 });
 
 document.getElementById('answer-next').addEventListener('click', function() {
@@ -115,7 +115,7 @@ document.getElementById('walk-btn').addEventListener('click', function() {
 
 //continue button after gym
 document.getElementById('gym-video').addEventListener('ended', function() {
-  document.getElementById('gym-next').style.display = 'block';
+  document.getElementById('gym-next').style.display = 'flex';
 });
 
 //hospital after gym
@@ -143,7 +143,7 @@ document.getElementById('gym-to-decline').addEventListener('click', function() {
 
 //continue button after walk
 document.getElementById('walk-video').addEventListener('ended', function() {
-  document.getElementById('walk-next').style.display = 'block';
+ document.getElementById('walk-next').style.display = 'flex';
 });
 
 //hospital after walk
