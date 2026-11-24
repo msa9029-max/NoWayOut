@@ -317,6 +317,40 @@ button:active {
   z-index: 20;
 }
 
+/* custom video control bar */
+
+#control-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90%, 650px);
+  background: #253744;
+  border: 1px solid #526775;
+  border-radius: 14px;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  z-index: 20;
+}
+
+#control-bar button {
+  background: transparent;
+  color: white;
+  font-size: 12px;
+  padding: 8px;
+  margin: 0;
+}
+
+#video-progress {
+  flex: 1;
+  min-width: 80px;
+  cursor: pointer;
+  accent-color: #e4eef7;
+}
+
 @media (max-width: 600px) {
   h1 {
     font-size: 60px;
