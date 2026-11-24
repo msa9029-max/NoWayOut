@@ -13,8 +13,20 @@
 
 <!-- small website title -->
 <div id="site-title" style="display: none;">NO WAY OUT</div>
+  
   <!-- video controls button -->
 <button id="controls-btn" style="display: none;">SHOW CONTROLS</button>
+
+  <!-- custom video control bar -->
+<div id="control-bar" style="display: none;">
+  <button id="play-pause-btn">PAUSE</button>
+
+  <input id="video-progress" type="range"
+    min="0" max="100" value="0" step="0.1">
+
+  <button id="mute-btn">MUTE</button>
+  <button id="fullscreen-btn">FULLSCREEN</button>
+</div>
   
   <!-- home page -->
   <div id="home" class="home-page">
