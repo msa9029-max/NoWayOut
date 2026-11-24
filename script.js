@@ -19,8 +19,16 @@ function showPage(pageId) {
   document.querySelectorAll('.home-page, .video-page').forEach(function(page) {
     page.style.display = 'none';
   });
+
   document.getElementById(pageId).style.display = 'flex';
   document.getElementById('video-error').style.display = 'none';
+
+  //only show controls button during the film
+  if (pageId === 'home') {
+    document.getElementById('controls-btn').style.display = 'none';
+  } else {
+    document.getElementById('controls-btn').style.display = 'block';
+  }
 }
 
 //video starts from the beginning
