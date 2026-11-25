@@ -351,6 +351,64 @@ button:active {
   accent-color: #e4eef7;
 }
 
+/* final scene */
+
+#final-scene {
+  background: #10151b;
+}
+
+.final-content {
+  width: min(90%, 800px);
+  text-align: center;
+}
+
+.final-message {
+  font-size: clamp(18px, 3vw, 25px);
+  font-weight: 400;
+  color: #aab8c3;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  animation: fadeIn 2s ease both;
+}
+
+.final-question {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 600;
+  color: white;
+  margin-bottom: 60px;
+  animation: fadeIn 2s ease 2.5s both;
+}
+
+.final-title {
+  font-size: clamp(55px, 10vw, 110px);
+  font-weight: 900;
+  margin-bottom: 40px;
+  animation: fadeIn 2s ease 5s both;
+}
+
+#restart-btn {
+  background: #253744;
+  color: white;
+  border: 1px solid #526775;
+  border-radius: 14px;
+  font-size: 16px;
+  animation: fadeIn 1.5s ease 7s both;
+}
+
+/* fade in animation */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 @media (max-width: 600px) {
   h1 {
     font-size: 60px;
