@@ -118,8 +118,13 @@ document.getElementById('scene1-video').addEventListener('ended', function() {
   showChoice('choice1');
 });
 
-//answer the call - go to hospital
+//answer the call - play answer clip first
 document.getElementById('answer-btn').addEventListener('click', function() {
+  playScene('answer-scene', 'answer-video');
+});
+
+//then go to hospital when that clip ends
+document.getElementById('answer-video').addEventListener('ended', function() {
   playScene('hospital-scene', 'hospital-video');
 });
 
