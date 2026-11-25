@@ -1,3 +1,4 @@
+
 //keeping track of the storylines
 let completedAnswer = false;
 let completedGym = false;
@@ -19,34 +20,13 @@ document.getElementById('controls-btn').addEventListener('click', function() {
     this.textContent = 'SHOW CONTROLS';
   }
 });
-function armChoiceAtEnd(videoId, choiceId) {
-  const video = document.getElementById(videoId);
-  const choice = document.getElementById(choiceId);
-  let shown = false;
-
-  function reveal() {
-    if (shown) return;
-    shown = true;
-    try { video.pause(); } catch (e) {}
-    updateChoices();
-    choice.style.display = 'flex';
-    void choice.offsetWidth;
-    choice.classList.add('is-visible');
-  }
-
-  function onTime() {
-    if (!video.duration || !isFinite(video.duration)) return;
-    if (video.currentTime / video.duration >= 0.92) {
-      reveal();
-    }
-  }
-
-  video.addEventListener('timeupdate', onTime);
-  video.addEventListener('ended', reveal);
-}
 
 //show the selected page
 function showPage(pageId) {
+  document.querySelectorAll('video').forEach(function(video) {
+    video.pause();
+  });
+
   document.querySelectorAll('.home-page, .video-page').forEach(function(page) {
     page.style.display = 'none';
   });
@@ -64,22 +44,19 @@ function showPage(pageId) {
   }
 }
 
-//video starts from the beginning
+//play a video from the beginning
 function playScene(pageId, videoId) {
-  document.querySelectorAll('video').forEach(function(video) {
-    video.pause();
-  });
-
   showPage(pageId);
 
   //hide previous choices
-    document.getElementById(pageId).querySelectorAll('.video-choices').forEach(function(choice) {
+  document.querySelectorAll('.video-choices').forEach(function(choice) {
     choice.style.display = 'none';
     choice.classList.remove('is-visible');
   });
 
   const video = document.getElementById(videoId);
-  delete video.dataset.choiceShown;
+
+  video.currentTime = 0;
 
   video.play().catch(function() {
     document.getElementById('video-error').textContent =
@@ -89,20 +66,24 @@ function playScene(pageId, videoId) {
   });
 }
 
-//check if all three storylines are completed
-function checkEnding() {
-  if (completedAnswer && completedGym && completedWalk) {
-    showPage('final-scene');
-    return true;
-  }
+//show choices over the video
+function showChoice(choiceId) {
+  updateChoices();
 
-  return false;
+  const choice = document.getElementById(choiceId);
+
+  choice.style.display = 'flex';
+  void choice.offsetWidth;
+  choice.classList.add('is-visible');
 }
 
-//update available choices
+//update the remaining choices
 function updateChoices() {
   document.getElementById('answer-btn').style.display =
     completedAnswer ? 'none' : '';
+
+  document.getElementById('decline-btn').style.display =
+    completedGym && completedWalk ? 'none' : '';
 
   document.getElementById('gym-btn').style.display =
     completedGym ? 'none' : '';
@@ -115,8 +96,16 @@ function updateChoices() {
 
   document.getElementById('walk-to-gym').style.display =
     completedGym ? 'none' : '';
-  document.getElementById('decline-btn').style.display =
-  completedGym && completedWalk ? 'none' : '';
+}
+
+//check if all three storylines are completed
+function checkEnding() {
+  if (completedAnswer && completedGym && completedWalk) {
+    showPage('final-scene');
+    return true;
+  }
+
+  return false;
 }
 
 //start film
@@ -124,12 +113,14 @@ document.getElementById('start-btn').addEventListener('click', function() {
   playScene('scene1', 'scene1-video');
 });
 
-//first decision
-armChoiceAtEnd('scene1-video', 'choice1');
+//first decision after the opening video
+document.getElementById('scene1-video').addEventListener('ended', function() {
+  showChoice('choice1');
+});
 
-//answer the call
+//answer the call - go to hospital
 document.getElementById('answer-btn').addEventListener('click', function() {
-  playScene('answer-scene', 'answer-video');
+  playScene('hospital-scene', 'hospital-video');
 });
 
 //decline the call
@@ -137,34 +128,30 @@ document.getElementById('decline-btn').addEventListener('click', function() {
   playScene('decline-scene', 'decline-video');
 });
 
-//continue after answering
-document.getElementById('answer-video').addEventListener('ended', function() {
-  playScene('hospital-scene', 'hospital-video');
-});
-
-//completed answer storyline
+//hospital after answering the call
 document.getElementById('hospital-video').addEventListener('ended', function() {
-  const video = this;
-  try { video.pause(); } catch (e) {}
   completedAnswer = true;
-  updateChoices();
+
   if (!checkEnding()) {
-    const panel = document.getElementById('hospital-ending');
-    panel.style.display = 'flex';
-    void panel.offsetWidth;
-    panel.classList.add('is-visible');
+    showChoice('hospital-ending');
   }
 });
 
-//back to the first decision
-document.getElementById('try-again-btn').addEventListener('click', function() {
+//return to the first decision
+function returnToCall() {
   showPage('scene1');
-  updateChoices();
-  document.getElementById('choice1').style.display = 'flex';
+  showChoice('choice1');
+}
+
+//try a different choice
+document.getElementById('try-again-btn').addEventListener('click', function() {
+  returnToCall();
 });
 
-//choices after declining
-armChoiceAtEnd('decline-video', 'choice2');
+//choices after declining the call
+document.getElementById('decline-video').addEventListener('ended', function() {
+  showChoice('choice2');
+});
 
 //go to the gym
 document.getElementById('gym-btn').addEventListener('click', function() {
@@ -176,52 +163,51 @@ document.getElementById('walk-btn').addEventListener('click', function() {
   playScene('walk-scene', 'walk-video');
 });
 
-//continue after gym
+//continue button after gym
 document.getElementById('gym-video').addEventListener('ended', function() {
+  showChoice('gym-next');
+});
+
+//continue to hospital after gym
+document.querySelector('#gym-next button').addEventListener('click', function() {
   playScene('gym-hospital', 'gym-hospital-video');
 });
 
-//completed gym storyline
+//hospital after gym
 document.getElementById('gym-hospital-video').addEventListener('ended', function() {
-  const video = this;
-  try { video.pause(); } catch (e) {}
   completedGym = true;
-  updateChoices();
+
   if (!checkEnding()) {
-    const panel = document.getElementById('gym-hospital-ending');
-    panel.style.display = 'flex';
-    void panel.offsetWidth;
-    panel.classList.add('is-visible');
+    showChoice('gym-hospital-ending');
   }
 });
+
 //choose walking instead
 document.getElementById('gym-to-walk').addEventListener('click', function() {
   playScene('walk-scene', 'walk-video');
 });
 
-//return to the first decision
+//try a different choice after gym
 document.getElementById('gym-to-decline').addEventListener('click', function() {
-  showPage('scene1');
-  updateChoices();
-  document.getElementById('choice1').style.display = 'flex';
+  returnToCall();
 });
 
-//continue after walk
+//continue button after walk
 document.getElementById('walk-video').addEventListener('ended', function() {
+  showChoice('walk-next');
+});
+
+//continue to hospital after walk
+document.querySelector('#walk-next button').addEventListener('click', function() {
   playScene('walk-hospital', 'walk-hospital-video');
 });
 
-//completed walk storyline
+//hospital after walk
 document.getElementById('walk-hospital-video').addEventListener('ended', function() {
-  const video = this;
-  try { video.pause(); } catch (e) {}
   completedWalk = true;
-  updateChoices();
+
   if (!checkEnding()) {
-    const panel = document.getElementById('walk-hospital-ending');
-    panel.style.display = 'flex';
-    void panel.offsetWidth;
-    panel.classList.add('is-visible');
+    showChoice('walk-hospital-ending');
   }
 });
 
@@ -230,11 +216,9 @@ document.getElementById('walk-to-gym').addEventListener('click', function() {
   playScene('gym-scene', 'gym-video');
 });
 
-//return to the first decision
+//try a different choice after walk
 document.getElementById('walk-to-decline').addEventListener('click', function() {
-  showPage('scene1');
-  updateChoices();
-  document.getElementById('choice1').style.display = 'flex';
+  returnToCall();
 });
 
 //restart the entire film
@@ -252,10 +236,25 @@ document.getElementById('restart-btn').addEventListener('click', function() {
 
   document.querySelectorAll('.video-choices').forEach(function(choice) {
     choice.style.display = 'none';
+    choice.classList.remove('is-visible');
   });
 
   document.getElementById('controls-btn').textContent = 'SHOW CONTROLS';
 
   updateChoices();
   showPage('home');
+});
+
+//show an error if the current video cannot load
+document.querySelectorAll('video').forEach(function(video) {
+  video.addEventListener('error', function() {
+    const page = video.closest('.video-page');
+
+    if (page.style.display === 'flex') {
+      document.getElementById('video-error').textContent =
+        'Could not load: ' + video.getAttribute('src');
+
+      document.getElementById('video-error').style.display = 'block';
+    }
+  });
 });

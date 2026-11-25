@@ -1,73 +1,60 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NO WAY OUT</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- small website title -->
 <div id="site-title" style="display: none;">NO WAY OUT</div>
-  
-  <!-- video controls button -->
+
+<!-- video controls button -->
 <button id="controls-btn" style="display: none;">SHOW CONTROLS</button>
 
-  <!-- custom video control bar -->
-<div id="control-bar" style="display: none;">
+<!-- home page -->
+<div id="home" class="home-page">
+  <h1>NO WAY OUT</h1>
+  <p>Your choices can change Abdulla's story</p>
+  <button id="start-btn">START FILM</button>
 </div>
-  
-  <!-- home page -->
-  <div id="home" class="home-page">
-    <h1>NO WAY OUT</h1>
-       <p>Your choices can change Abdulla's story</p>
-    <button id="start-btn">START FILM</button>
-  </div>
 
-  <!-- scene 1: phone call -->
-  <div id="scene1" class="video-page" style="display: none;">
-    <h2>MEIRA CALLING</h2>
-    <div class="video-box">
-      <video id="scene1-video" playsinline src="assets/scene1.mp4"></video>
-      <div id="choice1" class="video-choices" style="display: none;">
-        <p>WHAT SHOULD ABDULLA DO?</p>
-        <button id="answer-btn">ANSWER</button>
-        <button id="decline-btn">DECLINE</button>
-      </div>
-    </div>
-  </div>
-
-<!-- scene 2A: answer the call -->
-<div id="answer-scene" class="video-page" style="display: none;">
-  <h2>ANSWER THE CALL</h2>
+<!-- opening phone call -->
+<div id="scene1" class="video-page" style="display: none;">
   <div class="video-box">
-    <video id="answer-video" playsinline src="assets/Scene2a.mp4"></video>
-    <div id="answer-next" class="video-choices" style="display: none;">
-      <button>CONTINUE</button>
+    <video id="scene1-video" playsinline src="assets/Scene2a.mp4"></video>
+
+    <div id="choice1" class="video-choices" style="display: none;">
+      <p>WHAT SHOULD ABDULLA DO?</p>
+      <button id="answer-btn">ANSWER</button>
+      <button id="decline-btn">DECLINE</button>
     </div>
   </div>
 </div>
-  
-<!-- scene 3A: hospital -->
+
+<!-- hospital after answering the call -->
 <div id="hospital-scene" class="video-page" style="display: none;">
   <h2>THE HOSPITAL</h2>
+
   <div class="video-box">
     <video id="hospital-video" playsinline src="assets/DeclinedTheCall.mp4"></video>
+
     <div id="hospital-ending" class="video-choices" style="display: none;">
       <button id="try-again-btn">TRY A DIFFERENT CHOICE</button>
     </div>
   </div>
 </div>
 
-<!-- scene 2B: decline the call -->
+<!-- decline the call -->
 <div id="decline-scene" class="video-page" style="display: none;">
   <h2>DECLINE THE CALL</h2>
+
   <div class="video-box">
     <video id="decline-video" playsinline src="assets/Scene2b.mp4"></video>
+
     <div id="choice2" class="video-choices" style="display: none;">
       <p>WHAT SHOULD ABDULLA DO NEXT?</p>
       <button id="gym-btn">GO TO THE GYM</button>
@@ -75,47 +62,55 @@
     </div>
   </div>
 </div>
-  
-<!-- scene 4A: gym -->
+
+<!-- gym scene -->
 <div id="gym-scene" class="video-page" style="display: none;">
   <h2>THE GYM</h2>
+
   <div class="video-box">
     <video id="gym-video" playsinline src="assets/scene4a.mp4"></video>
+
     <div id="gym-next" class="video-choices" style="display: none;">
       <button>CONTINUE</button>
     </div>
   </div>
 </div>
-  
+
 <!-- hospital after gym -->
 <div id="gym-hospital" class="video-page" style="display: none;">
   <h2>THE HOSPITAL</h2>
+
   <div class="video-box">
     <video id="gym-hospital-video" playsinline src="assets/Didn'tGoToTheGym.mp4"></video>
+
     <div id="gym-hospital-ending" class="video-choices" style="display: none;">
       <p>WHAT SHOULD ABDULLA DO INSTEAD?</p>
       <button id="gym-to-walk">GO FOR A WALK</button>
-     <button id="gym-to-decline">TRY A DIFFERENT CHOICE</button>
+      <button id="gym-to-decline">TRY A DIFFERENT CHOICE</button>
     </div>
   </div>
 </div>
-  
-<!-- scene 4B: walk -->
+
+<!-- walk scene -->
 <div id="walk-scene" class="video-page" style="display: none;">
   <h2>THE WALK</h2>
+
   <div class="video-box">
     <video id="walk-video" playsinline src="assets/scene4b.mp4"></video>
+
     <div id="walk-next" class="video-choices" style="display: none;">
       <button>CONTINUE</button>
     </div>
   </div>
 </div>
-  
+
 <!-- hospital after walk -->
 <div id="walk-hospital" class="video-page" style="display: none;">
   <h2>THE HOSPITAL</h2>
+
   <div class="video-box">
     <video id="walk-hospital-video" playsinline src="assets/Didn'tGoOnAWalk.mp4"></video>
+
     <div id="walk-hospital-ending" class="video-choices" style="display: none;">
       <p>WHAT SHOULD ABDULLA DO INSTEAD?</p>
       <button id="walk-to-gym">GO TO THE GYM</button>
@@ -124,21 +119,31 @@
   </div>
 </div>
 
-  <!-- final scene -->
+<!-- final scene -->
 <div id="final-scene" class="video-page" style="display: none;">
   <div class="final-content">
+
     <p class="final-message">
       No matter what you chose, Abdulla ended up in the same place.
     </p>
+
     <p class="final-question">
       Was it ever really up to you?
     </p>
-   <h1 class="final-title">NO WAY OUT</h1>
+
+    <h1 class="final-title">NO WAY OUT</h1>
+
     <button id="restart-btn">RESTART FILM</button>
+
   </div>
 </div>
-  
-  <p id="video-error" class="error-message" style="display: none;">Video could not load</p>
-  <script src="script.js"></script>
+
+<!-- video error message -->
+<p id="video-error" class="error-message" style="display: none;">
+  Video could not load
+</p>
+
+<script src="script.js?v=5"></script>
+
 </body>
 </html>
