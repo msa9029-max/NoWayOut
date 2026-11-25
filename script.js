@@ -1,77 +1,17 @@
 //show or hide video controls
 let showControls = false;
-let currentVideo = null;
 
 document.getElementById('controls-btn').addEventListener('click', function() {
   showControls = !showControls;
 
+  document.querySelectorAll('video').forEach(function(video) {
+    video.controls = showControls;
+  });
+
   if (showControls) {
-    document.getElementById('control-bar').style.display = 'flex';
-    document.getElementById('controls-btn').textContent = 'HIDE CONTROLS';
+    this.textContent = 'HIDE CONTROLS';
   } else {
-    document.getElementById('control-bar').style.display = 'none';
-    document.getElementById('controls-btn').textContent = 'SHOW CONTROLS';
-  }
-});
-
-//play and pause
-document.getElementById('play-pause-btn').addEventListener('click', function() {
-  if (currentVideo && !currentVideo.ended) {
-    if (currentVideo.paused) {
-      currentVideo.play();
-    } else {
-      currentVideo.pause();
-    }
-  }
-});
-
-//update the progress bar and play/pause button
-document.querySelectorAll('video').forEach(function(video) {
-  video.addEventListener('timeupdate', function() {
-    if (video === currentVideo && video.duration) {
-      document.getElementById('video-progress').value =
-        (video.currentTime / video.duration) * 100;
-    }
-  });
-
-  video.addEventListener('play', function() {
-    if (video === currentVideo) {
-      document.getElementById('play-pause-btn').textContent = 'PAUSE';
-    }
-  });
-
-  video.addEventListener('pause', function() {
-    if (video === currentVideo) {
-      document.getElementById('play-pause-btn').textContent = 'PLAY';
-    }
-  });
-});
-
-//move through the video
-document.getElementById('video-progress').addEventListener('input', function() {
-  if (currentVideo && currentVideo.duration && !currentVideo.ended) {
-    currentVideo.currentTime =
-      (this.value / 100) * currentVideo.duration;
-  }
-});
-
-//mute and unmute
-document.getElementById('mute-btn').addEventListener('click', function() {
-  if (currentVideo) {
-    currentVideo.muted = !currentVideo.muted;
-
-    if (currentVideo.muted) {
-      this.textContent = 'UNMUTE';
-    } else {
-      this.textContent = 'MUTE';
-    }
-  }
-});
-
-//fullscreen
-document.getElementById('fullscreen-btn').addEventListener('click', function() {
-  if (currentVideo) {
-    currentVideo.parentElement.requestFullscreen();
+    this.textContent = 'SHOW CONTROLS';
   }
 });
 
