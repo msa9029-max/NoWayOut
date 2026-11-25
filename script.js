@@ -73,7 +73,7 @@ function checkEnding() {
   return false;
 }
 
-//update available choices
+//update of choices
 function updateChoices() {
   document.getElementById('answer-btn').style.display =
     completedAnswer ? 'none' : '';
