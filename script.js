@@ -89,6 +89,8 @@ function updateChoices() {
 
   document.getElementById('walk-to-gym').style.display =
     completedGym ? 'none' : '';
+  document.getElementById('decline-btn').style.display =
+  completedGym && completedWalk ? 'none' : '';
 }
 
 //start film
